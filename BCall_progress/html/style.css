@@ -1,0 +1,156 @@
+body {
+    background: rgba(0, 0, 0, 0);
+    margin-left: 70%;
+    margin-top: 50%;
+
+  }
+  .preloader-1 {
+    margin: 100px auto 0;
+    width: 66px;
+    height: 12px;
+    -webkit-animation: backInUp 1.5s;
+    animation: backInUp 1.5s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    
+  }
+  
+  
+  div {
+    color: #fff;
+    margin: 5px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    
+  }
+
+  .link-top {
+    width: 14%;
+    height: 1px;
+    margin-left: -7%;
+    margin-top: -0.5%;
+    position: absolute;
+    border-top: solid #e7e7e7 1px;
+    -webkit-animation: backInUp 1.5s;
+    animation: backInUp 1.5s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+}
+  
+
+
+  .preloader-1 .line {
+    width: 5px;
+    height: 12px;
+    background: #059c83;
+    margin: 0 1px;
+    display: inline-block;
+    animation: opacity-1 1000ms infinite ease-in-out;
+    
+  }
+  
+
+  .preloader-2 .line {
+    width: 1px;
+    height: 12px;
+    background: rgb(0, 0, 0);
+    margin: 0 1px;
+    display: inline-block;
+    animation: opacity-2 1000ms infinite ease-in-out;
+    
+  }
+  
+  .preloader-1 .line-1, .preloader-2 .line-1 { animation-delay: 800ms; }
+  .preloader-1 .line-2, .preloader-2 .line-2 { animation-delay: 600ms; }
+  .preloader-1 .line-3, .preloader-2 .line-3 { animation-delay: 600ms; }
+  .preloader-1 .line-4, .preloader-2 .line-4 { animation-delay: 500ms; }
+  .preloader-1 .line-6, .preloader-2 .line-6 { animation-delay: 400ms; }
+  .preloader-1 .line-7, .preloader-2 .line-7 { animation-delay: 200ms; }
+  .preloader-1 .line-8, .preloader-2 .line-8 { animation-delay: 200ms; }
+  .preloader-1 .line-9, .preloader-2 .line-9 { animation-delay: 200ms; }
+  .preloader-1 .line-10, .preloader-2 .line-10 { animation-delay: 400ms; }
+  .preloader-1 .line-11, .preloader-2 .line-11 { animation-delay: 500ms; }
+  .preloader-1 .line-12, .preloader-2 .line-12 { animation-delay: 600ms; }
+  .preloader-1 .line-13, .preloader-2 .line-13 { animation-delay: 600ms; }
+  .preloader-1 .line-14, .preloader-2 .line-14 { animation-delay: 800ms; }
+  
+  @keyframes opacity-1 { 
+    0% { 
+      opacity: 1;
+    }
+    50% { 
+      opacity: 0;
+    }
+    100% { 
+      opacity: 1;
+    }  
+  }
+  
+  @keyframes opacity-2 { 
+    0% { 
+      opacity: 1;
+      height: 15px;
+    }
+    50% { 
+      opacity: 0;
+      height: 12px;
+    }
+    100% { 
+      opacity: 1;
+      height: 15px;
+    }  
+  }
+
+#loading-text {
+    font-size: 110%;
+    font-family: "Open Sans";
+    color: #eee;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    margin-left: 79%;
+    margin-top: 48%;
+    text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+    -webkit-animation: backInUp 1.5s;
+    animation: backInUp 1.5s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+}
+
+
+@keyframes backInUp {
+    0% {
+      transform: translateY(1200px) scale(.7);
+      opacity: .7;
+    }
+  
+    80% {
+      transform: translateY(0px) scale(.7);
+      opacity: .7;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes backOutDown {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  
+    20% {
+      transform: translateY(0px) scale(.7);
+      opacity: .7;
+    }
+  
+    100%   {
+      transform: translateY(700px) scale(.7);
+      opacity: .7;
+    }
+  }
