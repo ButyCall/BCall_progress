@@ -1,26 +1,46 @@
-function startBar (text, time, options) {
-	$('#loading-text').html(text)
-	$('#preloader-1').fadeIn(300)
-	$('.preloader-1').removeAttr('style')
-	if (options) {
-		if (options.color)
-			$('.preloader-1').css('background-color', options.color)
-		if (options.customCSS)
-			$('.preloader-1').css(options.customCSS)
-	}
-	$('.preloader-1').stop().css({ width: '0px' }).animate({
-		width: '98%',
-	}, time, 'linear',
-		function () {
-			$('#preloader-1').fadeOut(600)
-		});
-};
+const DEFAULT_TIME = 3000;
 
-$(function () {
-	window.onload = (e) => {
-		window.addEventListener('message', (event) => {
-			var data = event.data;
-			startBar(data.text, data.time, data.options)
-		});
-	};
+function startBar(text = 'Loading...', time = DEFAULT_TIME, options = {}) {
+    const duration = Number(time) || DEFAULT_TIME;
+
+    const $wrapper = $('#preloader-1');
+    const $bar = $('.preloader-1');
+    const $text = $('#loading-text');
+
+    $text.text(text);
+
+    $bar.stop(true, true)
+        .removeAttr('style')
+        .css({
+            width: '0px'
+        });
+
+    if (options.color) {
+        $bar.css('background-color', options.color);
+    }
+
+    if (options.customCSS && typeof options.customCSS === 'object') {
+        $bar.css(options.customCSS);
+    }
+
+    $wrapper.stop(true, true).fadeIn(300);
+
+    $bar.animate(
+        {
+            width: '98%'
+        },
+        duration,
+        'linear',
+        function () {
+            $wrapper.fadeOut(600);
+        }
+    );
+}
+
+window.addEventListener('message', function (event) {
+    const data = event.data || {};
+
+    if (!data.text && !data.time) return;
+
+    startBar(data.text, data.time, data.options);
 });
