@@ -27,7 +27,7 @@ ensure Buty-Progress
 ### Event
 
 ```lua
-TriggerEvent('BCall_progress:muestra', 5000, 'Loading...')
+TriggerEvent('BCall_progress:ShowProgress', 5000, 'Loading...')
 ```
 
 ### Export
