@@ -10,6 +10,8 @@ local function ShowProgress(time, text, cb, options)
     end
 end
 
-RegisterNetEvent('BCall_progress:muestra', function(time, text, cb, options)
+RegisterNetEvent('ButyProgress:ShowProgress', function(time, text, cb, options)
     ShowProgress(time, text, cb, options)
 end)
+
+exports('ShowProgress', ShowProgress)
